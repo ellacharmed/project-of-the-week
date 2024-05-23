@@ -1,0 +1,20 @@
+# Micromamba environment file
+# https://marketplace.visualstudio.com/items?itemName=corker.vscode-micromamba
+
+name: potw-dvc
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.11,<3.12
+  - ipykernel
+  - jupyter
+  - pandas>=2.2
+  - polars
+  - scikit-learn
+  - dvc
+  - joblib
+  - dvclive
+  - altair
+  - matplotlib 
+  - seaborn
+  
