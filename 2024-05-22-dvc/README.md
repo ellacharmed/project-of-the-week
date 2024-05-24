@@ -1,164 +1,79 @@
-## DIY Data Version Control (DVC)
+# DTC Project of the week
 
-- **Goal**:Learn how to use DVC as a tool for versioning data, pipeline managing, experimentation, and many other usages. Get practical experience by using it for your project.
+> [!NOTE]
+>
+> **What is DVC?** Data Version Control is a free, open-source tool for data management, ML pipeline automation, and experiment management. This helps data science and machine learning teams manage large datasets, make projects reproducible, and collaborate better.
 
-- **Dates**: from 22th May to 28th May.
-- **Where:**- [`#project-of-the-week`](https://app.slack.com/client/T01ATQK62F8/C02BP4FQH36) in DataTalks.Club (get in slack here: [https://datatalks.club/slack.html](https://datatalks.club/slack.html))
+> [!NOTE]
+>
+> DVC is a tool for data science that takes advantage of existing software engineering toolset. It helps machine learning teams manage large datasets, make projects reproducible, and collaborate better.
+>
+> [Docs](https://dvc.org/doc) by dvc.ai/iterative.ai
 
-For more information about the "Project of the Week" initiative at DataTalks.Club, see [README.md](../README.md).
+In summary, DVC allows us 
+- to track our dataset versions alongside our code. It is another layer on top of git. The data can be stored locally for a solo developer, or remotely (shared network drive, G-Drive, GCP/AWS Buckets) for teams;
 
-## Technologies
+- the dataset version is attached to the ML model, so experiments can be reproduced easily;
 
-- VS Code
-- Python
-- Git
-- DVC
-- Altair
+- compare model's metrics and parameters in logged experiments and the corresponding dataset version that produces that metrics, so there's a lineage traceability;
 
-Note: this is a suggested list of technologies, you can chose alternatives instead
-
-## Plan
-
-This is a proposed plan only, you don’t have to follow it day-by-day.
-
-### Day 1 (22 May, Wednesday)
-
-- [x] Create a GitHub repository.
-- [x] Install DVC in your own OS with [2]
-- [ ] Understand and run Data version control capabilities (with custom data for example txt or csv)  
-  - [x] read documentation [1],
-    - too in-depth to grasp at first pass, need to *do* one cycle with **DVC** and then re-read
-  - [x] watch video [3] and 
-  - [ ] playlist [4]. <br/>**Friendly reminder**: DVC is not just a version control tool it also contains experimentation, pipelines, and more.
-- [x] Select dataset for project and identify project's objectives (EDA + ML)
-      - [dataset source](https://www.kaggle.com/datasets/aslanahmedov/walmart-sales-forecast)
-- [ ] Share your progress in Slack and on social media.
-
-Suggested material:
-
-1. 🗒️[Why and When to use DVC?](https://dvc.org/doc/use-cases)
-2. 🗒️[Official Doc for installation](https://dvc.org/doc/install)
-3. 📺[Hands-on with DVC by Jayesh Sharma](https://www.youtube.com/watch?v=efnw2QvlhZM)
-4. :video_camera:[DVC Basics playlist by DVCorg](https://youtube.com/playlist?list=PL7WG7YrwYcnDb0qdPl9-KEStsL-3oaEjg&si=VWK_I2CAm_plXfHp)
-
-Found good materials? Create a PR with links!
-
-### Day 2 (23 May, Thursday)
-
-- [x] Create an ML project pipeline that contains a processing, training, and evaluation step. 
-  - For dataset ideas check the first link in the suggested materials [1]. 
-  - I would suggest using small datasets and light libraries (sklearn and datasets) remember, the goal is to explore/learn the tool.
-- [ ] For ideas on how to split your ML pipeline, you can check the official example: [2]. 
-  - I made also a simple ml pipeline with a random forest with iris data if you want to copy: [3]
-- [ ] Create a params.yml that is going to store important parameters for the processing and training steps of your ML pipeline. Check these examples: 
-  - [ ] Official example [4], 
-  - [ ] mine more simple example [5]
-- [ ] Push your changes to GitHub.
-- [ ] Share your progress in Slack and on social media.
-
-**Notice*- the pipelines.py scripts do not have any dependency on DVClibrary (only the evaluation part, so you can skip it for now).
-
-Suggested material:
-
-1. 💾 [List of Dataset/Project ideas](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/projects/datasets.md)
-2. 💻 [DVC Official ml pipeline example](https://github.com/iterative/example-get-started/tree/main/src)
-3. 💻 [My GitHub’s simpler ml pipeline example with iris dataset](https://github.com/AntonisCSt/POW_DVC/tree/main/src)
-4. 💻 [Params.yml from DVC example](https://github.com/iterative/example-get-started/blob/main/params.yaml)
-5. 💻 [Params.yml more simplified](https://github.com/AntonisCSt/POW_DVC/blob/main/params.yaml)
-
-Found good materials? Create a PR with links!
-
-### Day 3 (24 May, Friday)
-
-- [ ] Finish preparing your own project if you haven’t from the previous day
-- [ ] Perform a version of your dataset with DVC: [1],[2]
-- [ ] For configuring the storage you can check [3].
- In case you don’t want to spend time setting a remote storage, you can also use a local folder.
-- [ ] Play with dvc commands `dvc status`,`dvc add`, `dvc add` (also with your git commands)
-- [ ] Push your changes to GitHub.
-- [ ] Share your progress in Slack and on social media.
-
-Suggested material:
-
-1. 📺[Versioning data Official Hands-on](https://www.youtube.com/watch?v=kLKBcPonMYw&t=0s)
-2. 📺[Hands-On with DVC](https://www.youtube.com/watch?v=efnw2QvlhZM)
-3. 🗒️[Remote Storage](https://dvc.org/doc/user-guide/data-management/remote-storage)
-
-Found good materials? Create a PR with links!
-
-### Day 4 (25 May, Saturday)
-
-- [ ] Try to build pipelines based on the official documentation [1]
-- [ ] You can follow the official video tutorial [2]. The video is from 3 years ago and some commands might have changed so make sure you use [1] docs in parallel.
-- [ ] Check out the summary in [3] to understand what this DVC feature solves.
-- [ ] Push your changes to GitHub.
-- [ ] Share your progress in Slack and on social media.
-
-**Note:*- It is important to have your params.yml ready and the dependencies correct in `dvc stage add` flags.
-Post your `dvc dag` if you want 🙂
-
-Suggested material:
-
-1. 🗒️[Data pipelines official doc](https://dvc.org/doc/start/data-pipelines/data-pipelines)
-2. 📺[Video Tutorial Hands-on](https://www.youtube.com/watch?v=71IGzyH95UY)
-3. 🗒️[What do DVC pipelines solve](https://dvc.org/doc/start/data-pipelines/data-pipelines#summary)
-
-Found good materials? Create a PR with links!
-
-### Day 5 (26 May, Sunday)
-
-- [ ] Create an evaluation.py script that prints and plots metrics from your ML model.
-- [ ] Install DVClive and adapt the library functions to your script like the official tutorial: [1].
-- [ ] Check out the official hands-on tutorial: [2]
-- [ ] Compare the git committed code with the local changes (in terms of params, metrics, and plots)
-- [ ] Push your changes to GitHub.
-- [ ] Share your progress in Slack and on social media.
-
-Note: It is important to have your params.yml ready and the dependencies correct in `dvc stage add` flags. 
-Post your `dvc dag` if you want 🙂
-
-Suggested material:
-
-1. 🗒️[Official doc tutorial for metric parameter plots](https://dvc.org/doc/start/data-pipelines/metrics-parameters-plots)
-2. 📺[Hands-on tutorial](https://www.youtube.com/watch?v=iduHPtBncBk&list=PL7WG7YrwYcnDb0qdPl9-KEStsL-3oaEjg)
-
-Found good materials? Create a PR with links!
-
-### Day 6 (27 May, Monday)
-
-- [ ] Continue with developing yesterday’s task
-- [ ] Change some of the parameters in params.yml and run the pipeline. To compare those ‘experiments’ you can use this reference [1]
-- [ ] Run and compare different experiments using [2]
-- [ ] Push your changes to GitHub.
-- [ ] Share your progress in Slack and on social media
-
-Suggested material:
-
-1. 🗒️[Official doc tutorial for tracking](https://dvc.org/doc/start/experiments/experiment-tracking?tab=VSCode-Extension#tracking)
-2. 🗒️[Comparing experiments](https://dvc.org/doc/user-guide/experiment-management/comparing-experiments)
-
-Found good materials? Create a PR with links!
-
-### Day 7 (28 May, Tuesday)
-
-- [ ] Polish the documentation for your project.
-- [ ] Continue exploring more about this topic: Check out how to share Data and Models Hands-on [1], Experiments [2]
-- [ ] Push your changes to GitHub.
-- [ ] Share your progress in Slack and on social media.
-- [ ] Give us feedback.
-- [ ] Add the link to your project to this project of the week GitHub page.
-
-Suggested material:
-1. 📺[Sharing Data and Models Hands-on](https://www.youtube.com/watch?v=EE7Gk84OZY8&list=PL7WG7YrwYcnDb0qdPl9-KEStsL-3oaEjg&index=2)
-2. 🗒️[Sharing Experiments](https://dvc.org/doc/user-guide/experiment-management/sharing-experiments)
-3. 📺[Model Registry Tutorial](https://www.youtube.com/watch?v=T7MBFpnSr9Q) 
+- DVC+CML (Continuous Machine Learning) facilitates CI/CD for Machine Learning projects
+  - **dvc**: data & model versioning, reproducible pipelines
+  - **cml**: orchestration, testing and monitoring
 
 
-## Projects
+## Objective
 
-List of projects from our participants:
+- Use DVC to track experiments and automate ML Pipelines to process, train and evaluate an ML model. 
 
-- ...
-- (Create a PR)
+## Tech stack
 
-(We will put the projects here after the event finishes)
+- list libraries and their versions, or point to [environment.yml](environment.yml)
+
+
+## Dataset
+
+- Download manually via a browser from [source](https://www.kaggle.com/datasets/aslanahmedov/walmart-sales-forecast).
+
+- TODO Download via Kaggle API
+
+```bash
+kaggle command
+```
+
+## Project Structure
+
+`tree` with below explanations
+
+dvc.yaml files define stages, parameters, metrics, and plots. Stages form the pipeline(s) of a project. Parameters, metrics, and plots are used to evaluate and compare project versions and may be defined within stages or independently.
+
+.dvc files ("dot DVC files") are placeholders to track data files and directories.
+
+.dvcignore files (optional) contain a list of paths for DVC to ignore, which can dramatically increase its operational performance.
+
+Internal files and directories in .dvc/ contain the local configuration file(s), default local cache location, and other utilities that DVC needs to operate.
+
+## TODO Installation
+
+- setup environment
+- clone repo 
+  - init fresh
+    - get dataset
+  - get finalized
+
+## Track data
+
+```bash
+ dvc add data/features.csv data/stores.csv data/test.csv data/train.csv
+
+100% Adding...|████████████████████████████████████████████████████████████████████████|4/4 [00:00, 43.73file/s]
+ 
+To track the changes with git, run:
+
+    git add data/stores.csv.dvc data/features.csv.dvc data/.gitignore data/test.csv.dvc data/train.csv.dvc
+
+To enable auto staging, run:
+
+    dvc config core.autostage true
+```
+
